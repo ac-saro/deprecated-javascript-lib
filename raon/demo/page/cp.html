@@ -1,0 +1,103 @@
+<!--
+KO
+raon-part는 반드시 <~ raon-part-id>의 첫번째 자식태그로 쓰셔야합니다.
+raon-part는 <~ raon-part-id> 의 영역의 선언입니다.
+$.cp() : 전체 raon-part 새로고침, $.cp('page-ui-cp-test') : page-ui-cp-test 새로고침
+<~ raon-part-id> 는 중첩으로 사용할 수 없습니다.
+
+EN
+must write raon-part in <~ raon-part-id> first unique child.
+raon-part is define <~ raon-part-id> area.
+$.cp() : all raon-part reload, $.cp('page-ui-cp-test') : page-ui-cp-test reload.
+<~ raon-part-id> is not be overlapped <~ raon-part-id>
+-->
+
+<div id="page-ui-cp">
+
+	<div class="title">Load data</div>
+	<!-- include -->
+	<div raon-part-id="page-ui-cp-test-4" raon-part-auto-start>
+		<raon-part>
+			<raon-include page="./page/cp-include2.html"/>
+			<raon-if test="cp.dataType != 2">
+				now data type not 2 (raon-if test)
+			</raon-if>
+		</raon-part>
+	</div>
+	<br/><br/>
+
+	<div class="title">Include Page</div>
+	<raon-include page="./page/cp-include.html"/>
+	<br/><br/>
+	
+	<div class="title">Data View</div>
+	<div>
+		<table raon-part-id="page-ui-cp-test-2" raon-part-auto-start>
+			<raon-part>
+				<tr>
+					<th>name</th>
+					<th>info : text</th>
+					<th>info : html</th>
+				</tr>
+				<raon-each data="node : cp.data">
+					<tr>
+						<td>{{ node.name }}</td>
+						<td>{{ node.info }}</td>
+						<td>{{ $.cp.html(node.info) }}</td>
+					</tr>
+				</raon-each>
+			</raon-part>
+		</table>
+	</div>
+	<br/><br/>
+	
+	
+	<div class="title">Data View (case)</div>
+	<div>
+		<table raon-part-id="page-ui-cp-test-3" raon-part-auto-start>
+			<raon-part>
+				<tr>
+					<th>SEQ</th>
+					<th>name</th>
+					<th>case</th>
+				</tr>
+				<raon-each data="node : cp.data">
+					<tr>
+						<td>{{ node.#index }}</td>
+						<td>{{ node.name }}</td>
+						<td>
+							<raon-case>
+								<raon-then test="node.#first">
+									is first
+								</raon-then>
+								<raon-then test="node.#last">
+									is last
+								</raon-then>
+								<raon-then test="node.name == 'MOE'">
+									is MOE
+								</raon-then>
+								<raon-else>
+									other
+								</raon-else>
+							</raon-case>
+						</td>
+					</tr>
+				</raon-each>
+			</raon-part>
+		</table>
+	</div>
+
+</div>
+
+<!-- 이해를 돕기위해 공용 css(main.css) 가 아닌 style 태그를 사용하였음. -->
+<!-- public css(main.css) is used instead of style tag for will be helping you understand -->
+<style type="text/css">
+table td { border-bottom: 1px solid #E9EFF3; background:#fff; transition:background .1s }
+table tr:hover td { background:#E9EFF3; }
+table th { background:#629FCA; color:#fff; }
+th, td { padding:6px; }
+table span.tag { display: inline-block; padding:4px 6px; margin:4px; color:#fff; background:#86B8DC; border-radius:2px; }
+</style>
+
+
+

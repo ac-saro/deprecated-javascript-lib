@@ -1,0 +1,50 @@
+<div id="page-ui-noti">
+
+	<div class="title">Notification Message</div>
+	<div><textarea id="noti-msg" placeholder="Notification Message">Notification Message</textarea></div><br/><br/>
+
+	<!-- Call Notification Button -->
+	<div class="title">Call Notification</div>
+	<div class="noti-desc">
+		<div>
+			<input type="button" value="call noti-1" onclick="$.ui.noti('noti-1', $('#noti-msg').val());"/>
+			position top left / delay 0.4s / view 0.6s / move up
+		</div>
+		<div>
+			<input type="button" value="call noti-2" onclick="$.ui.noti('noti-2', $('#noti-msg').val());"/>
+			position top center / delay 0.2s / view 0.2s / move down
+		</div>
+		<div>
+			<input type="button" value="call noti-3" onclick="$.ui.noti('noti-3', $('#noti-msg').val());"/>
+			position bottom left / <b>line to br</b> / move up
+		</div>
+		<div>
+			<input type="button" value="call noti-4" onclick="$.ui.noti('noti-4', $('#noti-msg').val());"/>
+			position bottom right / delay 0.3s / view 1.5s / <b>use html (unsafe)</b> / move down
+		</div>
+	</div>
+	
+	<!-- define Notification --> 
+	<div raon-noti-id="noti-1" raon-noti-opt="top left 400/600 up"></div>
+	<div raon-noti-id="noti-2" raon-noti-opt="top center 200/200 down"></div>
+	<div raon-noti-id="noti-3" raon-noti-opt="bottom line left up"></div>
+	<div raon-noti-id="noti-4" raon-noti-opt="bottom 300/1500 right html down">
+		<div class="gray">custom design demo</div>
+		<div raon-noti-body>
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- 이해를 돕기위해 공용 css(main.css) 가 아닌 style 태그를 사용하였음. -->
+<!-- public css(main.css) is used instead of style tag for will be helping you understand -->
+<style type="text/css">
+div[raon-noti-id="noti-1"] { width:300px; background:#9CB7CE; color:#fff; padding:12px; font-weight:bold }
+div[raon-noti-id="noti-2"] { width:300px; background:rgba(255,255,255,0.85); padding:8px; border-radius:5px; }
+div[raon-noti-id="noti-3"] { width:300px; background:rgba(255, 90, 212, 0.6); padding:8px; color:#fff; border:1px solid #fff }
+div[raon-noti-id="noti-4"] { width:300px; background:rgba(55, 84, 109, 0.85); color:#ff0; padding:4px; }
+div[raon-noti-id="noti-4"] > div[raon-noti-body] { padding:8px; font-size:15pt; font-weight:bold; line-height:2; color:#f77 }
+div[raon-noti-id="noti-4"] > div.gray { margin:8px 8px 0; color:#eee; font-size:11pt; }
+</style>
+

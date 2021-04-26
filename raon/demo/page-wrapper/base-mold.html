@@ -1,0 +1,30 @@
+<div id="header" class="AJ" raon-part-id="base-mold-menus" raon-part-auto-start>
+<raon-part>
+	<!-- Normal Menu -->
+	<raon-each data="node : pageMenu">
+		<a href="#page={{ node.name }}" page="{{ node.name }}">{{ node.view }}</a>
+	</raon-each>
+	
+	<!-- mobile menu : document width under 600 px -->
+	<div id="header-mobile-menu">
+		<img id="header-mobile-menu-icon" src="./res/head-mobile-menu.svg" alt="menu"/>
+		<div id="header-mobile-menu-float" class="hide">
+			<div>
+				<raon-each data="node : pageMenu">
+					<raon-if test="node.#index != 0">
+						<a href="#page={{ node.name }}">{{ node.view }}</a>
+					</raon-if>
+				</raon-each>
+			</div>
+		</div>
+	</div>
+	<!-- /mobile menu -->
+	
+	<!-- AJ iron -->
+	<div></div>
+</raon-part>
+</div>
+
+<div id="main-contents">
+가나다라
+</div>

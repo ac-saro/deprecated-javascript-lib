@@ -1,0 +1,60 @@
+<div id="page-ui-tip">
+	
+	<!-- 
+		ko
+		raon-tip="name : ~" : 정해진 문자를 반환함.
+		raon-tip="name :: ~" : 자바스크립트를 실행시켜 결과를 반환함.
+		en
+		raon-tip="name : ~" : write static string return
+		raon-tip="name :: ~" : return result for execute javascript
+	 -->
+	
+	<div class="title">Static ToolTip</div>
+	<div class="list" raon-tip="tooltip1 : view tooltip1">view tooltip1</div>
+	<div class="list" raon-tip="tooltip2 : view tooltip2">view tooltip2</div><br/><br/>
+	
+	<div class="title">Dynamic ToolTip - time</div>
+	<div class="list" raon-tip="tooltip1 :: $.time().toDate().toStr('yyyy-MM-dd HH:mm:ss')">view tooltip1</div>
+	<div class="list" raon-tip="tooltip2 :: $.time().toDate().toStr('yyyy-MM-dd HH:mm:ss')">view tooltip2</div><br/><br/>
+	
+	<div class="title">html option</div>
+	<div class="list" raon-tip="tooltip1 :: '<h1>html h1 tag</h1><br/>html test'">html safe tooltip</div>
+	<div class="list" raon-tip="tooltip2 :: '<h1>html h1 tag</h1><br/>html test'">html unsafe tooltip</div>
+	<div class="list" raon-tip="tooltip2 :: ('<h1>html h1 tag</h1><br/>html test').enHtml()">html unsafe tooltip but encode</div><br/><br/>
+	
+	<div class="title">line to br option</div>
+	<div class="list" raon-tip="tooltip1 : hello\nworld">is line to br</div>
+	<div class="list" raon-tip="tooltip2 : hello\nworld">is not line to br</div><br/><br/>
+	
+	<div class="title">Other ToolTip</div>
+	<!--
+		ko
+		raon-tip="name :: null 혹은 빈값은 tooltip이 표시되지 않음.
+		en
+		raon-tip="name :: null or empty is not visible tooltip
+	-->
+	<input id="page-ui-tip-msg" type="text" value="" placeholder="input msg and execute tooltip"/>
+	<div class="list" raon-tip="tooltip1 :: $('#page-ui-tip-msg').val()">view tooltip1</div>
+	<div class="list" raon-tip="tooltip2 :: $('#page-ui-tip-msg').val().enHtml()">view tooltip2</div><br/><br/>
+	
+	<!-- define tooltip1 -->
+	<div raon-tip-id="tooltip1" raon-tip-line-to-br>
+		<div class="gray">custom design demo</div>
+		<div raon-tip-body></div>
+	</div>
+	
+	<!-- define tooltip2 -->
+	<div raon-tip-id="tooltip2" raon-tip-html-unsafe></div>
+	
+</div>
+
+<!-- 이해를 돕기위해 공용 css(main.css) 가 아닌 style 태그를 사용하였음. -->
+<!-- public css(main.css) is used instead of style tag for will be helping you understand -->
+<style type="text/css">
+div[raon-tip-id="tooltip1"] { padding:4px 8px; background:rgba(255,255,255, .9); box-shadow:1px 1px 4px #000; border-radius:2px; }
+div[raon-tip-id="tooltip1"] > div { font-size:12px !important; line-height:1.6; color:#333; letter-spacing:0.7px; font-weight:bold; }
+div[raon-tip-id="tooltip1"] > div.gray { color:#777; }
+
+div[raon-tip-id="tooltip2"] { padding:8px 14px; background:rgba(30, 30, 30, .8); border:1px solid #aaa; color:#fff }
+</style>
+

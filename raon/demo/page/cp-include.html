@@ -1,0 +1,26 @@
+<div raon-part-id="page-ui-cp-test-1" raon-part-auto-start>
+	<raon-part>
+		<table raon-part-id="page-ui-cp-test-2" raon-part-auto-start>
+			<raon-part>
+				<tr>
+					<th>SEQ</th>
+					<th>name</th>
+					<th>info</th>
+					<th>tags</th>
+				</tr>
+				<raon-each data="node : cp.data">
+					<tr>
+						<td>{{ ( node.#index ) + 1 }}</td>
+						<td>{{ node.name }}</td>
+						<td>{{ node.info }}</td>
+						<td>
+							<raon-each data="tag : node.tags">
+								<span class="tag">{{ tag }}</span>
+							</raon-each>
+						</td>
+					</tr>
+				</raon-each>
+			</raon-part>
+		</table>
+	</raon-part>
+</div>

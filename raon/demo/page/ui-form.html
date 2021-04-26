@@ -1,0 +1,60 @@
+<!-- 반드시 form 태그를 쓸 필요가 없는 것을 보여주기위해 div를 예제로 하였습니다. -->
+<!-- this sample code is example about the form tag is not indispensable -->
+<div id="page-ui-form" raon-form-id="ui-form">
+	
+	<div class="title-desc">E - Mail (max 64) move to email_no_watch keydown enter</div>
+	<input name="email" type="text"/>
+	<div id="err-email" class="err-out"></div>
+	
+	<div class="title-desc">E - Mail (max 64 / no watch)</div>
+	<input name="email_no_watch" type="text"/>
+	<div id="err-email_no_watch" class="err-out"></div>
+	
+	<div class="title-desc">Number (max 10 / filter) all filter allow copy and paste</div>
+	<input name="no" type="text"/>
+	<div id="err-no" class="err-out"></div>
+	
+	<div class="title-desc">Number (max 10 / filter / permit empty)</div>
+	<input name="no_empty" type="text"/>
+	<div id="err-no_empty" class="err-out"></div>
+	
+	<div class="title-desc">Password 1</div>
+	<div id="pwc-lv"><div></div></div>
+	<input name="pwc1" type="password"/>
+	<div id="err-pwc1" class="err-out"></div>
+	
+	<div class="title-desc">Password 2</div>
+	<input name="pwc2" type="password"/>
+	<div id="err-pwc2" class="err-out"></div>
+	
+	<div class="title-desc">Select</div>
+	<select name="sel"></select>
+	<div id="err-sel" class="err-out"></div>
+	
+	<!-- 라디오, 체크박스등은 raon-each로도 만들 수 있다. -->
+	<!-- radio, checkbox...etc make possible raon-each -->
+	<div class="title-desc">Radio</div>
+	<div>
+		<input name="rdo" type="radio" value="1" id="rdo1"/> <label for="rdo1">value 1</label>
+		<input name="rdo" type="radio" value="2" id="rdo2"/> <label for="rdo2">value 2 (error)</label>
+		<input name="rdo" type="radio" value="3" id="rdo3"/> <label for="rdo3">value 3</label>
+	</div>
+	<div id="err-rdo" class="err-out"></div>
+	
+	<div class="title-desc">Checkbox (max select 2)</div>
+	<div>
+		<input name="chk" type="checkbox" value="1" id="chk1"/> <label for="chk1">value 1</label>
+		<input name="chk" type="checkbox" value="2" id="chk2"/> <label for="chk2">value 2</label>
+		<input name="chk" type="checkbox" value="3" id="chk3"/> <label for="chk3">value 3</label>
+	</div>
+	<div id="err-chk" class="err-out"></div>
+	
+	<div class="title-desc">Button 1</div>
+	<input name="btn" type="button"/>
+	<div id="err-btn" class="err-out"></div>
+	
+	<div class="title-desc">Send</div>
+	<input name="send" type="button"/>
+	<div id="err-send" class="err-out"></div>
+	
+</div>
