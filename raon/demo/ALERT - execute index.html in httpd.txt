@@ -1,0 +1,1 @@
+운영체제에서 클릭시 ajax 등이 실행되지않아 httpd에서 실행할 것을 권장합니다.!!경로에 상관없이 실행할 수 있도록 상대경로를 썼습니다.다만 실제 프로젝트에선 절대경로를 권장합니다.not executed ajax and etc httpd functions.. click by OS, so execute httpd index.htmlthis files relative path for executable any pathbut not demo project encourage use absolute path
